@@ -20,14 +20,21 @@ body {
 
 .context h1 {
     text-align: center;
-    color: #fefefe;
-    font-size: 150px;
+    color: #ffffff;
+    font-size: 80px;
+    position: relative;
+    top: -230px;
+
+
 }
 
 .context h3 {
     text-align: center;
     color: #e4b714;
     font-size: 30px;
+    position: relative;
+    top: -230px;
+
 }
 
 
