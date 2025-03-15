@@ -1,4 +1,5 @@
 from flask import Flask, render_template, make_response
+import time
 
 app = Flask(__name__)
 
@@ -15,7 +16,8 @@ def nocache(view):
 @app.route('/')
 @nocache
 def index():
-    return render_template('index.html')
+    timestamp = int(time.time())
+    return render_template('index.html', timestamp=timestamp)
 
 
 
