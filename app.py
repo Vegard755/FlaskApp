@@ -1,7 +1,5 @@
 from flask import Flask, render_template, make_response, request, jsonify
-
 import time
-
 app = Flask(__name__)
 
 
@@ -17,9 +15,8 @@ def index():
 @app.route('/send-message', methods=['POST'])
 def send_message():
     data = request.get_json()
-    user_message = data.get('message', '')
-    bot_response = f"Hello! You said: {user_message}"  # Replace with AI logic
-    return jsonify({'response': bot_response})
+    user_message = data.get('message')
+    return jsonify({'response': user_message})
 
 
 
