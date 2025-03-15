@@ -20,7 +20,7 @@ body {
 
 .context h1 {
     text-align: center;
-    color: #ff00dd;
+    color: #000000;
     font-size: 80px;
     position: relative;
     top: -230px;
@@ -28,7 +28,7 @@ body {
 
 .context h3 {
     text-align: center;
-    color: #ff00bf;
+    color: #000000;
     font-size: 30px;
     position: relative;
     top: -230px;
