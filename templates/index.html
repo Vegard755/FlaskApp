@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Username Generator</title>
-    <link rel="icon" href="/static/images/logo.ico?v={{ timestamp }}" type="image/x-icon">
+    <link rel="icon" href="/static/images/logo.ico?v={{ timestamp }}">
     <link rel="stylesheet" href="/static/css/styles.css?v={{ timestamp }}">
     <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet">
 </head>
@@ -30,7 +30,40 @@
     <div class="context">
         <h1>Better Username Generator</h1>
         <h3>Powered by AI</h3>
+        <div class="message-box">
+            <form onsubmit="sendMessage(); return false;">
+                <input type="text" id="chatInput" placeholder="Type your message here">
+                <button onClick="sendMessage()">Send</button>
+
+            </form>
+        </div>
+        <div class="response-box">
+            <!-- Responses from the backend will be displayed here -->
+        </div>
+
     </div>
+    
+    <script>
+        function sendMessage() {
+            event.preventDefault(); // Prevent form submission from reloading the page
+            let message = document.getElementById("chatInput").value;
+    
+            fetch('/send-message', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let responseBox = document.querySelector('.response-box');
+                responseBox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+                responseBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
+                document.getElementById("chatInput").value = ''; // Clear input field
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+
 </body>
 
 </html>
