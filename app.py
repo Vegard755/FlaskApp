@@ -34,7 +34,7 @@ def send_message():
     client = genai.Client(api_key=GOOGLE_API_KEY)
     response = client.models.generate_content(model="gemini-2.0-flash-lite", contents=format_string)
     print(response.text) # optional
-    response = f"Gemini: {response.text}"
+    response = response.text
     
     return jsonify({"response": response})
 

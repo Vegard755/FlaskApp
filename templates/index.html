@@ -56,7 +56,9 @@
             .then(data => {
                 let responseBox = document.querySelector('.response-box');
                 responseBox.innerHTML += `<p><strong>You: </strong> ${message}</p>`;
-                responseBox.innerHTML += `<p>${data.response}</p>`;
+            // Replace newline characters with <br> tags
+            let formattedResponse = data.response.replace(/\n/g, '<br>');
+            responseBox.innerHTML += `<p>${formattedResponse}</p>`;
                 document.getElementById("chatInput").value = ''; // Clear input field
             })
             .catch(error => console.error('Error:', error));

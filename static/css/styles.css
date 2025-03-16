@@ -40,23 +40,38 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    bottom: 0px;
+    bottom: -300px;
     text-align: center;
 }
 
 .response-box {
     width: 80%; /* Adjust the width as needed */
     max-width: 1000px; /* Set a maximum width */
-    margin: 20px auto 0; /* Center the box and add top margin */
-    min-height: 200px; /* Set a minimum height */
-    max-height: 200px; /* Set a maximum height */
+    margin: -70px auto 0; /* Center the box and add top margin */
+    min-height: 400px; /* Set a minimum height */
+    max-height: 400px; /* Set a maximum height */
     background-color: #000000b2; /* Background color for the response box */
     border: 3px solid #000000; /* Border for the response box */
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     text-align: left; /* Align text to the left */
-    padding: 10px; /* Add padding for better readability */
+    padding: 20px; /* Add padding for better readability */
     box-sizing: border-box; /* Ensure padding and border are included in the width and height */
 }
+
+.response-box p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+@media (max-width: 600px) {
+    .response-box {
+        width: 90%; /* Adjust the width for mobile devices */
+        min-height: 300px; /* Adjust the minimum height for mobile devices */
+        max-height: 300px; /* Adjust the maximum height for mobile devices */
+        padding: 15px; /* Adjust padding for better readability on mobile */
+    }
+}
+
 
 .area {
     background: #000428;
