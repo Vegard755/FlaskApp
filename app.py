@@ -1,8 +1,7 @@
 from flask import Flask, render_template, make_response, request, jsonify
 import time
 import os
-from google import genai
-from google.genai import types
+import google.generativeai as genai
 from dotenv import load_dotenv
 from flask_cors import CORS
 
