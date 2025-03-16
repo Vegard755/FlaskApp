@@ -4,8 +4,6 @@ app = Flask(__name__)
 
 
 
-
-
 @app.route('/')
 def index():
     timestamp = int(time.time())
@@ -16,6 +14,7 @@ def index():
 def send_message():
     data = request.get_json()
     user_message = data.get('message')
+    print(user_message)
     return jsonify({'response': user_message})
 
 
