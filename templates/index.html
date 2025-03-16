@@ -55,7 +55,7 @@
             .then(response => response.json())
             .then(data => {
                 let responseBox = document.querySelector('.response-box');
-                responseBox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+                responseBox.innerHTML += `<p><strong>You: </strong> ${message}</p>`;
                 responseBox.innerHTML += `<p>${data.response}</p>`;
                 document.getElementById("chatInput").value = ''; // Clear input field
             })
