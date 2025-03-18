@@ -14,8 +14,7 @@ body {
 .context {
     width: 100%;
     position: absolute;
-    top: 30vh;
-
+    text-align: center;
 }
 
 .context h1 {
@@ -23,7 +22,7 @@ body {
     color: #ffffff;
     font-size: 80px;
     position: relative;
-    top: -230px;
+    top: +100px;
 }
 
 
@@ -32,17 +31,24 @@ body {
     color: #ffd000;
     font-size: 30px;
     position: relative;
-    top: -230px;
+    top: +100px;
 }
+
 .container {
-    margin-top: -150px; /* Adjust this value to move the elements higher or lower */
+    width: 100%;
+    position: absolute; /* Ensure it stays in the normal flow */
+    margin-top: 20%; /* Add spacing between .context and .container */
+    display: flex; /* Added flexbox for alignment */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    flex-direction: column; /* Stack children vertically */
 }
 
 .custom-input-box {
-    width: 100%; /* Full width */
-    max-width: 300px;
+    width: 135%; /* Full width */
+    max-width: 600px;
     padding: 12px 20px; /* Some padding */
-    margin: 8px 0; /* Some margin */
+    margin: 5px auto; /* Center the box horizontally */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     border: 2px solid #000000; /* Gray border */
     background-color: #1c1f2b;
@@ -50,7 +56,8 @@ body {
     border-radius: 12px; /* Rounded corners */
     font-size: 16px; /* Increase font size */
     transition: border-color 0.3s ease; /* Smooth transition for border color */
-    
+    position: relative; /* Ensure it stays within the flow of the container */
+    margin-left: -55%;
 }
 
 .custom-button {
@@ -66,8 +73,9 @@ body {
     overflow: hidden;
     transition: background-color 0.3s ease;
     border: none;
-    position: relative; /* Important for positioning the pseudo-element */
+    position: absolute; /* Important for positioning the pseudo-element */
     z-index: 1;
+    left: 56%;
 
 }
 
@@ -76,9 +84,8 @@ body {
 }
 
 
-
 .response-box {
-    width: 80%; /* Adjust the width as needed */
+    width: 100%; /* Adjust the width as needed */
     max-width: 600px; /* Set a maximum width */
     margin: 20px auto 0; /* Center the box and add top margin */
     min-height: 350px; /* Set a minimum height */
@@ -111,7 +118,7 @@ body {
 
 
 
-
+/*Wallpaper*/
 
 .area {
     background: #000428;
@@ -233,34 +240,6 @@ body {
     }
 
 }
-
-.context {
-    text-align: center;
-    color: #fff;
-}
-
-.button-container {
-    margin-top: 50px;
-}
-
-.register-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 15px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.register-button:hover {
-    transform: scale(1.09);
-}
-
-
-/* Responsive Design */
 
 /* For Mobile Devices */
 @media (max-width: 767px) {
