@@ -29,15 +29,17 @@
     <div class="context">
         <h1>Better Username Generator</h1>
         <h3>Powered by AI</h3>
-        <div class="message-box">
-            <form onsubmit="sendMessage(); return false;">
-                <input type="text" id="chatInput" class="custom-input-box" placeholder="Type your message here">
-                <button class="custom-button" onClick="sendMessage()">Generate</button>
-                <div class="background-button"></div>
-            </form>
-        </div>
-        <div class="response-box">
-            <!-- Responses from the backend will be displayed here -->
+        <div class="container">
+            <div class="message-box">
+                <form onsubmit="sendMessage(); return false;">
+                    <input type="text" id="chatInput" class="custom-input-box" placeholder="Type your message here">
+                    <button class="custom-button" onClick="sendMessage()">Generate</button>
+                    <div class="background-button"></div>
+                </form>
+                <div class="response-box">
+                    <!-- Responses from the backend will be displayed here -->
+                </div>
+            </div>
         </div>
 
     </div>
