@@ -49,7 +49,6 @@ def gemini_inputs(user_message):
         ]
     name_string = ", ".join(name_list)
 
-
     prompt = f"""
     You are my username generator. You need to generate me 10 creative and clean usernames based on this: {user_message}. 
     For inspirational purposes, here are some good usernames, and remember, dont copy them, theyre only for inspiration:
