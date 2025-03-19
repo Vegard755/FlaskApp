@@ -51,7 +51,7 @@ body {
     margin: 5px auto; /* Center the box horizontally */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     border: 2px solid #000000; /* Gray border */
-    background-color: #1c1f2b;
+    background-color: #211c2b;
     color: #a1a1a1;
     border-radius: 12px; /* Rounded corners */
     font-size: 16px; /* Increase font size */
@@ -67,7 +67,7 @@ body {
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4px 14px;
     cursor: pointer;
     border-radius: 12px;
     overflow: hidden;
@@ -75,12 +75,12 @@ body {
     border: none;
     position: absolute; /* Important for positioning the pseudo-element */
     z-index: 1;
-    left: 56%;
+
 
 }
 
 .custom-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049; /* lighter green on hover */
 }
 
 
@@ -115,130 +115,63 @@ body {
         padding: 15px; /* Adjust padding for better readability on mobile */
     }
 }
+/* ---------------------------------- TEXT BOXES ----------------------------------------------------------------------*/
+
+.all-text-boxes {
+    display: flex;
+    justify-content: center; /* Center the text boxes, can use SPACE-EVENLY */
+    align-items: flex-end;  /* Align the text boxes at the bottom */
+    margin-top: auto;
+    gap: 20px; /* Add some space between the text boxes */
+    height: 150vh;
+    user-select: text; /* Allow text selection */
+
+
+}
+
+.features-tab {
+    color: #b4b4b4;
+    width: 400px; /* Set a fixed width */
+    height: 250px; /* Set a fixed height */
+    padding: 20px; /* Add padding */
+}
+
+
+.how-to-use {
+    color: #b4b4b4;
+    width: 400px; /* Set a fixed width */
+    height: 250px; /* Set a fixed height */
+    padding: 20px; /* Add padding */
+
+}
+
+.why-use-it {
+    color: #b4b4b4;
+    width: 400px; /* Set a fixed width */
+    height: 250px; /* Set a fixed height */
+    padding: 20px; /* Add padding */
+
+}
+
+.tips-for-username {
+    color: #b4b4b4;
+    width: 400px; /* Set a fixed width */
+    height: 250px; /* Set a fixed height */
+    padding: 20px; /* Add padding */
+}
+
+
+
+/* ---------------------------------- TEXT BOXES ----------------------------------------------------------------------*/
+
 
 
 
 /*Wallpaper*/
-
 .area {
-    background: #000428;
+    background: radial-gradient(circle, rgba(40, 0, 77, 0.541) 1%, rgb(0, 0, 0) 100%);
     width: 100%;
-    height: 100vh;
-}
-
-.circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.circles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-
-}
-
-.circles li:nth-child(1) {
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-}
-
-
-.circles li:nth-child(2) {
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
-
-.circles li:nth-child(3) {
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
-
-.circles li:nth-child(4) {
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-
-.circles li:nth-child(5) {
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-}
-
-.circles li:nth-child(6) {
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-}
-
-.circles li:nth-child(7) {
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-}
-
-.circles li:nth-child(8) {
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-
-.circles li:nth-child(9) {
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-}
-
-.circles li:nth-child(10) {
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-
-
-@keyframes animate {
-
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
-
+    height: 200vh;
 }
 
 /* For Mobile Devices */

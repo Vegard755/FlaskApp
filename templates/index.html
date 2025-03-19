@@ -26,7 +26,7 @@
             </ul>
         </div>
         <div class="context">
-            <h1>Better Username Generator</h1>
+            <h1>Username Generator</h1>
             <h3>Powered by AI</h3>
         </div>
         
@@ -41,9 +41,40 @@
             </div>
         
         </div>
-    </div>
-   
     
+        <div class="all-text-boxes">
+            <div class="features-tab">
+                <h3>Features of Our AI Username Generator</h3>
+                <p>- AI enhances your input to generate distinctive and memorable usernames.</p>
+                <p>- Get 10 creative usernames even without entering any words.</p>
+                <p>- Enter a name, keyword, or theme for tailored results.</p>
+                <p>- No waiting, get your usernames in seconds</p>
+                <p>- No need for brainstorming; just click and generate</p>
+            </div>
+            <div class="how-to-use">
+                <h3>How to Use the AI Username Generator</h3>
+                <p>1. Enter One or Two Words - Type in a word, a name, or leave it blank for full AI creativity.</p>
+                <p>2. Click "Generate" - Instantly get 10 unique username suggestions.</p>
+                <p>3. Choose Your Favorite - Pick a username that fits your personality or brand.</p>
+                <p>4. Repeat for More Ideas - Not satisfied? Generate again for fresh options.</p>
+            </div>
+            <div class="why-use-it">
+                <h3>Why Use Our AI Username Generator?</h3>
+                <p>- Gamers - Find the perfect gamertag that stands out in any lobby.</p>
+                <p>- Social Media Users - Get creative, aesthetic, and unique handles for Instagram, Twitter, TikTok, and more.</p>
+                <p>- Startups & Brands - Discover brandable usernames for your business, website, or project.</p>
+            </div>
+            <div class="tips-for-username">
+                <h3>Tips for Finding the Perfect Username</h3>
+                <p>- Try different keywords related to your interests.</p>
+                <p>- Mix short and long words for a balanced username.</p>
+                <p>- Generate multiple times to explore different styles.</p>
+                <p>- Choose a name that's easy to remember and spell.</p>
+            </div>
+        </div>
+    </div>
+
+ 
     <script>
         function sendMessage() {
             event.preventDefault(); // Prevent form submission from reloading the page
@@ -57,7 +88,6 @@
             .then(response => response.json())
             .then(data => {
                 let responseBox = document.querySelector('.response-box');
-                responseBox.innerHTML += `<p><strong>You: </strong> ${message}</p>`;
             // Replace newline characters with <br> tags
             let formattedResponse = data.response.replace(/\n/g, '<br>');
             responseBox.innerHTML += `<p>${formattedResponse}</p>`;
