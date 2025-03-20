@@ -282,6 +282,13 @@ footer {
         padding: 12px 20px; /* Some padding */
 
     }
+    .description {
+        width: 80%; /* Increase width for better readability */
+        max-width: 90%; /* Ensure it doesn't take up too much space */
+        margin: 0 auto; /* Center the div horizontally */
+        text-align: center; /* Ensure text inside is centered */
+        margin-bottom: 20px;
+    }
 }
 
 
