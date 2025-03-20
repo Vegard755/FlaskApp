@@ -11,77 +11,110 @@ body {
 }
 
 
+/*Wallpaper*/
+.area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centers all children horizontally */
+    gap: 20px; /* Space between the text boxes */
+    background: radial-gradient(circle, rgba(31, 0, 59, 0.87) 1%, rgb(0, 0, 0) 100%);
+    width: 100%;
+    min-height: 100vh; /* Ensures the area takes at least full viewport height */
+    padding: 50px 0; /* Adds padding to prevent overflow */
+}
+
 .context {
     width: 100%;
-    position: absolute;
     text-align: center;
 }
 
 .context h1 {
-    text-align: center;
     color: #ffffff;
     font-size: 80px;
     position: relative;
-    top: +100px;
+    margin-top: 50px;
+    margin-bottom: 40px;
 }
 
 
 .context h3 {
-    text-align: center;
-    color: #ffd000;
+    color: #30cf00;
     font-size: 30px;
     position: relative;
-    top: +100px;
+    margin-bottom: 10px;
 }
+
+.description {
+    color: #b4b4b4;
+    width: 60%;
+    position: relative;
+    margin-bottom: 80px;
+    justify-self: center;
+    background-color: rgba(0, 0, 0, 0.253);
+    border-radius: 18px;
+    padding: 15px;
+    max-width: 750px;
+}
+
 
 .container {
     width: 100%;
-    position: absolute; /* Ensure it stays in the normal flow */
-    margin-top: 20%; /* Add spacing between .context and .container */
-    display: flex; /* Added flexbox for alignment */
-    justify-content: center; /* Center children horizontally */
-    align-items: center; /* Center children vertically */
-    flex-direction: column; /* Stack children vertically */
+}
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* space between input and button */
+    width: 100%;
+    max-width: 600px;
+    margin: 5px auto;  /* centers the container */
 }
 
 .custom-input-box {
-    width: 135%; /* Full width */
+    width: 70%;
     max-width: 600px;
     padding: 12px 20px; /* Some padding */
-    margin: 5px auto; /* Center the box horizontally */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    border: 2px solid #000000; /* Gray border */
-    background-color: #211c2b;
+    border: 2px solid rgba(0, 0, 0, 0.192); /* Gray border */
+    background-color: rgba(33, 28, 43, 0.671);
     color: #a1a1a1;
     border-radius: 12px; /* Rounded corners */
     font-size: 16px; /* Increase font size */
     transition: border-color 0.3s ease; /* Smooth transition for border color */
     position: relative; /* Ensure it stays within the flow of the container */
-    margin-left: -55%;
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+    margin-right: 35px;
 }
+
 
 .custom-button {
-    background-color: #028109;
-    color: #fff;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
+    background-color: transparent;
+    color: #a1a1a1;
+    border: solid #ffd000;
+    border-width: 0.1px;
+    border-radius: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    height: 60px;
+    width: 120px;
     font-size: 16px;
-    margin: 4px 14px;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: background-color 0.3s ease;
-    border: none;
-    position: absolute; /* Important for positioning the pseudo-element */
-    z-index: 1;
+    transition: border-width 0.04s, color 0.1s, background-color 0.1s, box-shadow 0.15s;
+    
+  }
+  .custom-button:hover {
+    border-width: 4px;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .custom-button:active {
+    background-color: #ffd000;
+    border-width: 8px;
+    color: rgb(0, 0, 0);
+  }
 
 
-}
-
-.custom-button:hover {
-    background-color: #45a049; /* lighter green on hover */
-}
 
 
 .response-box {
@@ -90,13 +123,14 @@ body {
     margin: 20px auto 0; /* Center the box and add top margin */
     min-height: 350px; /* Set a minimum height */
     max-height: 350px; /* Set a maximum height */
-    background-color: #1c1f2b; /* Light background color */
-    border: 2px solid #000000; /* Light gray border */
+    background-color: rgba(33, 28, 43, 0.671); /* Light background color */
+    border: 2px solid rgba(0, 0, 0, 0.192); /* Light gray border */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     text-align: left; /* Align text to the left */
     padding: 15px; /* Add padding for better readability */
+    margin-bottom: 80px;
     box-sizing: border-box; /* Ensure padding and border are included in the width and height */
     font-size: 16px; /* Font size */
     color: #b4b4b4; /* Text color */
@@ -106,31 +140,24 @@ body {
 
 
 
-/* Media query for mobile devices */
-@media (max-width: 600px) {
-    .response-box {
-        width: 90%; /* Adjust the width for mobile devices */
-        min-height: 300px; /* Adjust the minimum height for mobile devices */
-        max-height: 300px; /* Adjust the maximum height for mobile devices */
-        padding: 15px; /* Adjust padding for better readability on mobile */
-    }
-}
+
 /* ---------------------------------- TEXT BOXES ----------------------------------------------------------------------*/
 
 .all-text-boxes {
     display: flex;
-    justify-content: center; /* Center the text boxes, can use SPACE-EVENLY */
-    align-items: flex-end;  /* Align the text boxes at the bottom */
-    margin-top: auto;
-    gap: 20px; /* Add some space between the text boxes */
-    height: 150vh;
-    user-select: text; /* Allow text selection */
-
-
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;  /* Align at the top so it grows naturally */
+    gap: 20px;
+    flex-wrap: wrap; /* Wrap items when they don't fit */
+    width: 100%;
+    margin-bottom: 150px;
 }
 
 .features-tab {
     color: #b4b4b4;
+    background-color: rgba(0, 0, 0, 0.253);
+    border-radius: 20px;
     width: 400px; /* Set a fixed width */
     height: 250px; /* Set a fixed height */
     padding: 20px; /* Add padding */
@@ -139,6 +166,8 @@ body {
 
 .how-to-use {
     color: #b4b4b4;
+    background-color: rgba(0, 0, 0, 0.253);
+    border-radius: 20px;
     width: 400px; /* Set a fixed width */
     height: 250px; /* Set a fixed height */
     padding: 20px; /* Add padding */
@@ -147,6 +176,8 @@ body {
 
 .why-use-it {
     color: #b4b4b4;
+    background-color: rgba(0, 0, 0, 0.253);
+    border-radius: 20px;
     width: 400px; /* Set a fixed width */
     height: 250px; /* Set a fixed height */
     padding: 20px; /* Add padding */
@@ -155,6 +186,8 @@ body {
 
 .tips-for-username {
     color: #b4b4b4;
+    background-color: rgba(0, 0, 0, 0.253);
+    border-radius: 20px;
     width: 400px; /* Set a fixed width */
     height: 250px; /* Set a fixed height */
     padding: 20px; /* Add padding */
@@ -165,19 +198,99 @@ body {
 /* ---------------------------------- TEXT BOXES ----------------------------------------------------------------------*/
 
 
-
-
-/*Wallpaper*/
-.area {
-    background: radial-gradient(circle, rgba(40, 0, 77, 0.541) 1%, rgb(0, 0, 0) 100%);
-    width: 100%;
-    height: 200vh;
+footer {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-container div {
+    margin: 10px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    color: #ff6b6b;
+}
+
+.footer-links ul, .footer-legal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li, .footer-legal ul li {
+    margin: 8px 0;
+}
+
+.footer-links a, .footer-legal a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover, .footer-legal a:hover {
+    color: #ff6b6b;
+}
+
+.footer-social a img {
+    width: 24px;
+    margin: 5px;
+    transition: transform 0.3s;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .response-box {
+        width: 80%; /* Adjust the width for mobile devices */
+        min-height: 350px; /* Adjust the minimum height for mobile devices */
+        max-height: 350px; /* Adjust the maximum height for mobile devices */
+        padding: 15px; /* Adjust padding for better readability on mobile */
+    }
+    .custom-input-box {
+        width: 60%; /* Full width */
+        padding: 12px 20px; /* Some padding */
+
+    }
+}
+
+
 
 /* For Mobile Devices */
 @media (max-width: 767px) {
+
     .context h1 {
-        font-size: 80px;
+        font-size: 60px;
         /* Adjust the font size for smaller screens */
     }
 
@@ -190,12 +303,12 @@ body {
 /* For Tablet Devices */
 @media (min-width: 768px) and (max-width: 1023px) {
     .context h1 {
-        font-size: 120px;
+        font-size: 60px;
         /* Adjust the font size for tablet screens */
     }
 
     .context h3 {
-        font-size: 25px;
+        font-size: 20px;
         /* Adjust the font size for tablet screens */
     }
 }

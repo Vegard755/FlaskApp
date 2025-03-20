@@ -11,37 +11,28 @@
 
 <body>
     <div class="area">
-        <div class="circles">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
         <div class="context">
             <h1>Username Generator</h1>
-            <h3>Powered by AI</h3>
+            <h3>Generate Unique Usernames with AI</h3>
+            <p class="description">
+                Our AI-powered Username Generator creates creative and original usernames based on your input. 
+                Enter one or two words—or let AI work its magic without any input—and get 10 unique, high-quality 
+                username suggestions instantly. Whether you need a cool gaming tag, a catchy social media handle, 
+                or a brand-new identity, our generator delivers the best names every time.
+            </p>
         </div>
         
         <div class="container">
-            <form onsubmit="sendMessage(); return false;">
+            <form class="input-container" onsubmit="sendMessage(); return false;">
                 <input type="text" id="chatInput" class="custom-input-box" placeholder="Type your message here">
                 <button class="custom-button" onClick="sendMessage()">Generate</button>
-                <div class="background-button"></div>
             </form>
-            <div class="response-box">
-                <!-- Responses from the backend will be displayed here -->
-            </div>
-        
         </div>
-    
+        <div class="response-box">
+            <!-- Responses from the backend will be displayed here -->
+        </div>
+        
+
         <div class="all-text-boxes">
             <div class="features-tab">
                 <h3>Features of Our AI Username Generator</h3>
@@ -52,7 +43,7 @@
                 <p>- No need for brainstorming; just click and generate</p>
             </div>
             <div class="how-to-use">
-                <h3>How to Use the AI Username Generator</h3>
+                <h3>How to Use</h3>
                 <p>1. Enter One or Two Words - Type in a word, a name, or leave it blank for full AI creativity.</p>
                 <p>2. Click "Generate" - Instantly get 10 unique username suggestions.</p>
                 <p>3. Choose Your Favorite - Pick a username that fits your personality or brand.</p>
@@ -96,7 +87,9 @@
             .catch(error => console.error('Error:', error));
         }
     </script>
-
+    <footer>
+        @ Username Generator. All rights reserved.
+    </footer>
 </body>
 
 </html>
