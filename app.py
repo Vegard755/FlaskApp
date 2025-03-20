@@ -30,7 +30,7 @@ def send_message():
     user_message = data.get('message')
     print(user_message)
     format_string = gemini_inputs(user_message)
-
+    
     client = genai.Client(api_key=GOOGLE_API_KEY)
     response = client.models.generate_content(model="tunedModels/username-generator-m2q467sj0qcm", contents=format_string)
     print(response.text) # optional

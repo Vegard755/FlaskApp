@@ -90,7 +90,7 @@ body {
 .custom-button {
     background-color: transparent;
     color: #a1a1a1;
-    border: solid #ffd000;
+    border: solid #00af0f;
     border-width: 0.1px;
     border-radius: 18px;
     padding-left: 18px;
@@ -109,7 +109,7 @@ body {
   }
 
   .custom-button:active {
-    background-color: #ffd000;
+    background-color: #00af0f;
     border-width: 8px;
     color: rgb(0, 0, 0);
   }
