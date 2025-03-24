@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from flask_cors import CORS
 from google import genai
+from google.genai.errors import ServerError
 
 
 app = Flask(__name__)
@@ -32,7 +33,10 @@ def send_message():
     format_string = gemini_inputs(user_message)
     
     client = genai.Client(api_key=GOOGLE_API_KEY)
-    response = client.models.generate_content(model="tunedModels/username-generator-m2q467sj0qcm", contents=format_string)
+    try:
+        response = client.models.generate_content(model="tunedModels/username-generator-m2q467sj0qcm", contents=format_string)
+    except ServerError as e:
+        return jsonify({"response": "Server Error. Please try again."})
     print(response.text) # optional
     response = response.text
     
