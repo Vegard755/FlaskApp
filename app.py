@@ -37,11 +37,18 @@ def send_message():
         response = client.models.generate_content(model="tunedModels/username-generator-m2q467sj0qcm", contents=format_string)
     except ServerError as e:
         return jsonify({"response": "Server Error. Please try again."})
-    print(response.text) # optional
-    response = response.text
-    
-    return jsonify({"response": response})
+    raw_response = response.text
 
+    cleaned_usernames = []
+    for line in raw_response.splitlines():
+        cleaned_line = line.lstrip("0123456789-. ").strip()
+        if cleaned_line:
+            cleaned_usernames.append(cleaned_line)
+    
+    cleaned_response = "\n".join(cleaned_usernames)
+    print(cleaned_response)
+    
+    return jsonify({"response": cleaned_response})
 
 
 def gemini_inputs(user_message):

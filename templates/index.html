@@ -85,6 +85,10 @@
             event.preventDefault(); // Prevent form submission from reloading the page
             let message = document.getElementById("chatInput").value;
     
+            // Clear the response box before fetching new data
+            let responseBox = document.querySelector('.response-box');
+            responseBox.innerHTML = '';
+    
             fetch('/send-message', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -92,10 +96,9 @@
             })
             .then(response => response.json())
             .then(data => {
-                let responseBox = document.querySelector('.response-box');
-            // Replace newline characters with <br> tags
-            let formattedResponse = data.response.replace(/\n/g, '<br>');
-            responseBox.innerHTML = `<p>${formattedResponse}</p><div style="border-top: 1px solid #ccc; margin: 5px 0;"></div>` + responseBox.innerHTML;
+                // Replace newline characters with <br> tags
+                let formattedResponse = data.response.replace(/\n/g, '<br>');
+                responseBox.innerHTML = `<p>${formattedResponse}</p>`;
                 document.getElementById("chatInput").value = ''; // Clear input field
             })
             .catch(error => console.error('Error:', error));
